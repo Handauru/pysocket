@@ -15,6 +15,7 @@ import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+# data should be added though GUI
 for data in [b'Michael', b'Tracy', b'Sarah']:
     # Send Data:
     s.sendto(data, ('127.0.0.1', 9999))

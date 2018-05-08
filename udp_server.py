@@ -16,13 +16,17 @@ import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # Bind port & IP:
+#
+# *** should add manual key-in IP and port number!!!
+#
 s.bind(('127.0.0.1', 9999))
 print('Bind UDP on 9999...')
 
+# keep the port on listening
 while True:
     # Recv data:
-    data, addr = s.recvfrom(1024)
+    data, addr = s.recvfrom(1024) # what's the 1024 for?
     print('Received from %s:%s.' % addr)
-    reply = 'Hello, %s!' % data.decode('utf-8')
+    reply = 'Hello, %s!' % data.decode('utf-8') # how to modify to what i wnat?
     s.sendto(reply.encode('utf-8'), addr)
 
