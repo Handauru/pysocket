@@ -13,12 +13,15 @@
 
 import socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#HOST = input('please enter the dst IP:')
+#HOST = '127.0.0.1'
+#c=type(HOST)
+#print(c)
+#PORT = int(input('please enter the dst port:'))
 
-# Bind port & IP:
-#
-# *** should add manual key-in IP and port number!!!
-#
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#s.bind((HOST, PORT))
+
 s.bind(('127.0.0.1', 9999))
 print('Bind UDP on 9999...')
 
